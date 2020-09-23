@@ -1,0 +1,19 @@
+<br>
+<ul class="list-group" *ngFor="let todo of todoList; index as index">
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-9">
+                <b>{{todo.task}}</b>
+                <div>{{todo.description}}</div>
+            </div>
+            <div class=" col-3">
+                <button class="btn btn-primary btn-sm" (click)="editTodo(index)">Edit</button> &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-danger btn-sm" (click)="deleteTodo(index)">Delete</button>
+            </div>
+        </div>
+    </li>
+</ul>
+<br>
+<div>
+    <button class="btn btn-success btn-block" (click)="saveToServer()">Save to Server</button>
+</div>

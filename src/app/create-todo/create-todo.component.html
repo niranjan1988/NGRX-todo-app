@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="todoForm">
+    <div class="form-group">
+        <label for="task">Task Name:</label>
+        <input type="text" class="form-control" formControlName="task" >
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" formControlName="description">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="!todoForm.valid">{{isCreateNew?"Create":"Update"}}</button> &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-primary" (click)="resetForm()">Reset</button>
+    </div>
+</form>
